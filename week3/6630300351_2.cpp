@@ -1,4 +1,4 @@
-#include <iostream>>
+#include <iostream>
 using namespace std;
 
 struct record{
@@ -20,27 +20,27 @@ int menu(){
 
 struct record *Insert(struct record *head,int data){
     struct record *node,*p;
-    if(head==NULL){ //กรณีไม่มีข้อมูล
+    if(head==NULL){ //check == null
         head=new struct record;
         head->value=data;
         head->next=NULL;
     }else{
         node=new struct record;
         node->value=data;
-        if(data<head->value){ //แทรกตัวแรก
+        if(data<head->value){ // insert first
             node->next=head;
             head=node;
         }else{
             p=head;
             while(p->next!=NULL){
-                if(data<p->next->value){ //แทรกตัวกลาง
+                if(data<p->next->value){ //insert midble
                     node->next=p->next;
                     p->next=node;
                     break;
                 }
-                    p=p->next; //ให้ p ขยับ
+                    p=p->next; //wake pointer p
             }
-            if(p->next==NULL){ //แทรกตัวท้าย
+            if(p->next==NULL){ //insert last
                 p->next=node;
                 node->next=NULL;
             }

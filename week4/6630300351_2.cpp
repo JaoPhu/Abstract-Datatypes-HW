@@ -19,18 +19,7 @@ char menu(){
     return n;
 }
 
-int count_list(struct record *head){
-    int n=0;
-    struct record *p=head;
-    while(p!=NULL){
-        n++;
-        p=p->next;
-    }
-    return n;
-}
-
 void decode(struct record *head){
-    int size_list=count_list(head);
     struct record *p1=head,*p2=head->next;
     while(p1!=NULL){
         cout << p1->c;

@@ -16,7 +16,7 @@ int menu(){
     cout << "3) Count "<< endl;
     cout << "4) Print mid to max,max to min "<< endl;
     cout << "5) Print first half and second half "<< endl;
-    cout << "6) Find "<< endl;
+    cout << "6) Exit "<< endl;
     cout << "\tPlease choose >  ";
     cin >> choose;
     return choose;
@@ -178,26 +178,6 @@ struct record *Delete(struct record *head,int data){
     return head;
 }
 
-void Find(struct record *head,int data){
-    struct record *p=head;
-    bool found = false;
-
-    while(p!=NULL){
-        if(p->value==data){
-            cout << "Found " << data << " in List!" << endl;
-            found = true;
-            break;
-        }
-        p=p->next;
-    }
-    if(found==false){
-        cout << "Not found " << data << " in List!" << endl;
-    }
-
-    cout << "\n";
-
-}
-
 int main(){
     int count_size = 0;
     struct record *head = NULL;
@@ -226,10 +206,7 @@ int main(){
                 Print(head);
                 break;
             case 6 :
-                cout << "Find : ";
-                cin >> data;
-                Find(head,data);
-                break;
+                return 0;
         }
     }
     return 0;
